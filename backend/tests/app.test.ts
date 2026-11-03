@@ -109,7 +109,7 @@ describe('readiness', () => {
   });
 
   it('returns 200 after a successful MongoDB ping', async () => {
-    mongo = await MongoMemoryServer.create();
+    mongo = await MongoMemoryServer.create({ binary: { version: '7.0.14' } });
     await mongoose.connect(mongo.getUri());
 
     const response = await request(createApp()).get('/ready');

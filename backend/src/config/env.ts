@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 import { z } from 'zod';
 
-dotenv.config();
+dotenv.config({ quiet: true });
 
 const nodeEnvSchema = z.enum(['development', 'test', 'production']);
 const logLevelSchema = z.enum(['fatal', 'error', 'warn', 'info', 'debug', 'trace', 'silent']);
@@ -134,6 +134,9 @@ function loadOrExit(): Env {
     return loadEnv();
   } catch (error) {
     const message = error instanceof Error ? error.message : 'Invalid environment configuration';
+    if (process.env.NODE_ENV === 'test') {
+      throw error;
+    }
     console.error(message);
     process.exit(1);
   }

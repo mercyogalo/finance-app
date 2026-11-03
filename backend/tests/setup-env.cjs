@@ -1,0 +1,13 @@
+process.env.NODE_ENV = 'test';
+process.env.HOST = '127.0.0.1';
+process.env.PORT = '3000';
+process.env.MONGODB_URI = 'mongodb://127.0.0.1:27017/hifadhi_test';
+process.env.LOG_LEVEL = 'silent';
+process.env.CORS_ORIGINS = 'http://localhost:3000';
+process.env.DEMO_MODE = 'false';
+process.env.MOCK_AI = 'true';
+process.env.PAYOUT_PROVIDER = 'mock';
+process.env.SMS_PROVIDER = 'console';
+process.env.X402_ENABLED = 'false';
+process.env.RATE_LIMIT_WINDOW_MS = '60000';
+process.env.RATE_LIMIT_MAX = '1000';
