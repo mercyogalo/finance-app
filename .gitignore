@@ -1,0 +1,13 @@
+.DS_Store
+*.log
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Tooling
+.tooling/
+
+# Flutter SDK must never be committed if unpacked locally
+flutter-sdk/
